@@ -1,6 +1,6 @@
 pipeline {
   agent {
-  label 'C_Test'
+  label 'Testing_C'
 }	
   stages {
     stage ('BUILD') {
