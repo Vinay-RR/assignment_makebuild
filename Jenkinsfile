@@ -1,22 +1,16 @@
 pipeline {
   agent {
   label 'Testing_C'
-}	
-  parameters {
-  choice choices: ['Big2.c'], description: 'Big2.c', name: 'Test_Big2.C'
-  choice choices: ['Fact.c'], description: 'Fact.c', name: 'Test_Fact.C'
 }
-
   stages {
-    stage ('BUILD Test_C') {
+    stage ('BUILD BIG2.C') {
       steps {
-        if (Test_Big.C == Big2.c)
-        echo "Build Big2.c ${params.Test_Big2.C}"
-        git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git'
-        elif (Test_Fact.C == Fact.c)
-          echo "Build Fact.c ${params.Test_Fact.C}"
-        git branch: 'main', url: 'https://github.com/Vinay-RR/make_fact_c.git'
-        fi
+        git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git
+      }
+    }
+    stage (BUILD FACT.C') {
+           steps {
+             git branch: 'main', url: 'https://github.com/Vinay-RR/make_fact_c.git'
       }
     }
 }
