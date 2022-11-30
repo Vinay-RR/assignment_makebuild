@@ -11,7 +11,7 @@ pipeline {
     stage ('BUILD BIG2.C') {
       steps {
         echo "Build Big2.c ${params.Test_Big2.C}"
-        git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git',Test_Big2.C : "${params.Test_Big2.C}"
+        git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git', Test_Big2.C : "${params.Test_Big2.C}"
         sh 'sleep 5'
       }  
     } 
