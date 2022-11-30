@@ -10,12 +10,12 @@ pipeline {
   stages {
     stage ('BUILD BIG2.C') {
       steps {
-        echo "Build Big2.c ${params.Test_Big2.C}"
-        echo "Build Fact.c ${params.Test_Fact.C}"
         if (Test_Big.C == Big2.c)
-        return [ git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git' ]
+        echo "Build Big2.c ${params.Test_Big2.C}"
+        git branch: 'main', url: 'https://github.com/Vinay-RR/make_big2_c.git', Test_Big2.C: "${params.Test_Big2.C}"
         else if (Test_Fact.C == Fact.c)
-          return [ git branch: 'main', url: 'https://github.com/Vinay-RR/make_fact_c.git']
+          echo "Build Fact.c ${params.Test_Fact.C}"
+        git branch: 'main', url: 'https://github.com/Vinay-RR/make_fact_c.git', Test_Fact.C: "${params.Test_Fact.C}"
         fi
       }
     }
