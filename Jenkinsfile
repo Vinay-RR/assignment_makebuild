@@ -8,7 +8,7 @@ pipeline {
 }
 
   stages {
-    stage ('BUILD BIG2.C') {
+    stage ('BUILD Test_C) {
       steps {
         if (Test_Big.C == Big2.c)
         echo "Build Big2.c ${params.Test_Big2.C}"
@@ -19,5 +19,5 @@ pipeline {
         fi
       }
     }
-      }
-    }
+  }
+ }
